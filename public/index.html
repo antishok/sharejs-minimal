@@ -11,6 +11,7 @@
 <body>
 	<textarea id='sharetext' rows=15 cols=120></textarea>
 	<script>
+		var numRemoteOps = 0;
 		// get the textarea element 
 		var elem = document.getElementById("sharetext");
 		// connect to the server
@@ -21,6 +22,9 @@
 			} else {
 				// attach the ShareJS document to the textarea
 				doc.attach_textarea(elem);
+				doc.on('remoteop', function(op) {
+					window.document.title = 'Sup (' + (++numRemoteOps) + ')';
+				});
 			}
 		});
 	</script>

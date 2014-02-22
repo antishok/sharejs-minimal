@@ -6,7 +6,7 @@ var app = connect();
 var port = process.env.PORT || 3000;
 
 app.use(connect.logger('dev'));
-app.use(connect.static('public'));
+app.use(connect.static('public')); // you can remove this and the "public" folder, if hosting the html elsewhere (e.g. python)
 
 sharejs.attach(app, {db: {type: 'none'}});
 
