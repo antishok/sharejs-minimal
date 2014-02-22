@@ -1,0 +1,8 @@
+{
+  "name": "shr",
+  "version": "0.0.1",
+  "dependencies": {
+    "share": "0.6",
+    "connect": "2.13.0"
+  }
+}

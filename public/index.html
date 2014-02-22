@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Sup</title>
+	<script src="bcsocket.js"></script>
+	<script src="share.js"></script>
+	<script src="textarea.js"></script>
+</head>
+
+<body>
+	<textarea id='sharetext' rows=15 cols=120></textarea>
+	<script>
+		// get the textarea element 
+		var elem = document.getElementById("sharetext");
+		// connect to the server
+		var connection = sharejs.open('test', 'text', function(error, doc) {
+			// this function is called once the connection is opened
+			if (error) {
+				console.log("ERROR:", error);
+			} else {
+				// attach the ShareJS document to the textarea
+				doc.attach_textarea(elem);
+			}
+		});
+	</script>
+</body>
+</html>
